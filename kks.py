@@ -571,7 +571,7 @@ class SpaceWarGame:
         self.draw_health_bar(50, 80, 200, 20, self.player.current_hp / self.player.max_hp, GREEN)
         self.draw_health_bar(550, 80, 200, 20, self.current_enemy.current_hp / self.current_enemy.max_hp, RED)
         
-        # Диалоговое окно (ретро-стиль)
+        # Диалоговое окно
         self.screen.blit(self.dialog_bg, (50, 350))
         pygame.draw.rect(self.screen, CYAN, (50, 350, 700, 120), 2)
         
@@ -699,7 +699,7 @@ class SpaceWarGame:
         stats_text = font_medium.render(f"ПОБЕД: {self.player.wins}", True, CYAN)
         self.screen.blit(stats_text, (SCREEN_WIDTH//2 - stats_text.get_width()//2, 260))
         
-        # Облачко реплики врага (если есть)
+        # Облачко реплики врага
         if self.current_enemy.speech_text:
             self.screen.blit(self.current_enemy.speech_bubble, (SCREEN_WIDTH//2 - 150, 300))
         
